@@ -22,6 +22,7 @@ print.Rttest <- function(x,...) {
   data = c(Rttest$data,Rttest$Confidence_Interval,Rttest$P.value,Rttest$Alpha)
   kable(Rttest$data)
  
+#Check 
   
 }
 #data
