@@ -1,5 +1,6 @@
 library(kableExtra)
-#' PacakageProject3
+library(P3THISONE)
+#' PackageProject3
 #'
 #' @param x X variable as as vector
 #' @param y Y variable as a vector
@@ -9,7 +10,8 @@ library(kableExtra)
 #' @export
 #'
 #' @examples
-#' Insert Example
+#'
+#' Repo Link: https://github.com/Ajordan10/packageprog3.git
 
 myconstr = function(x, y, alpha){
   Rttest2 <- t.test(x, y, mu = 0, var.equal = TRUE, conf.level = 1-alpha)
@@ -23,6 +25,21 @@ print.Rttest <- function(x,...) {
   #kable(Rttest$data)
 
 }
+#CHECK FUNCTION
+check(
+  pkg = ".",
+  document = NULL,
+  build_args = NULL,
+  manual = FALSE,
+  cran = TRUE,
+  env_vars = c(NOT_CRAN = "true"),
+  quiet = TRUE,
+  check_dir = tempdir(),
+  cleanup = TRUE,
+  vignettes = TRUE,
+  error_on = c("never", "error", "warning", "note")
+)
+
 #data
 set.seed(21)
 x <- rnorm(30,5,2)
@@ -32,7 +49,9 @@ y <- rnorm(30,3,2)
 
 alpha <- 0.05
 
-Rttest <-P3THISONE::myconstr(x, y, alpha)
-
-class(Rttest)
+Rttest <-P3THISONE::myconstr(x=x, y=y, alpha=0.5)
+library(P3THISONE)
 kableExtra::kable(print(Rttest))
+#class(Rttest)
+
+
