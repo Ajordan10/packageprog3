@@ -381,7 +381,7 @@ myconstr = function(x, y, alpha){
 print.Rttest &lt;- function(x,...) {
   data = c(Rttest$data,Rttest$Confidence_Interval,Rttest$P.value,Rttest$Alpha)
   kable(Rttest$data)
-  kableExtra::kable(print(Rttest))
+ 
   
 }
 #data
@@ -393,10 +393,380 @@ y &lt;- rnorm(30,3,2)
 
 alpha &lt;- 0.05
 
-Rttest = myconstr(x, y, alpha)
-class(Rttest)</code></pre>
+Rttest &lt;- P3THISONE::myconstr(x=x, y=y, alpha=0.05)
+library(P3THISONE)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;P3THISONE&#39;</code></pre>
+<pre><code>## The following objects are masked _by_ &#39;.GlobalEnv&#39;:
+## 
+##     myconstr, print.Rttest</code></pre>
+<pre class="r"><code>kableExtra::kable(print(Rttest))</code></pre>
+<pre><code>## $data
+##            x         y
+## 1  6.5860263 3.3864247
+## 2  6.0445025 2.1306358
+## 3  8.4924445 4.8265342
+## 4  2.4573278 6.5867762
+## 5  9.3947791 4.9932102
+## 6  5.8662616 5.2149810
+## 7  1.8596007 2.4438274
+## 8  3.1301887 5.0384110
+## 9  5.1269867 3.0908744
+## 10 4.9952133 6.1515592
+## 11 0.4464375 3.4365769
+## 12 6.5148245 0.9069293
+## 13 3.9031889 2.4226227
+## 14 5.3450990 3.9631006
+## 15 6.1257061 0.5672471
+## 16 8.0236359 3.6162738
+## 17 6.3180503 1.9596434
+## 18 7.2440561 2.1153724
+## 19 3.4307173 1.8013744
+## 20 4.1486154 5.5891557
+## 21 5.7859952 4.6707825
+## 22 5.0735143 1.8679698
+## 23 2.9358327 4.5768387
+## 24 2.4702771 0.6681413
+## 25 4.5460694 1.9383600
+## 26 6.4911786 2.9978825
+## 27 5.6656384 1.9748753
+## 28 2.7519191 5.4857350
+## 29 3.5877384 1.6788343
+## 30 3.5449123 3.3332484
+## 
+## $Confidence_Interval
+## [1] 0.6564034 2.6017659
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95
+## 
+## $P.value
+## [1] 0.001414586
+## 
+## $Alpha
+## [1] 0.05</code></pre>
+<table class="kable_wrapper">
+<tbody>
+<tr>
+<td>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+x
+</th>
+<th style="text-align:right;">
+y
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+6.5860263
+</td>
+<td style="text-align:right;">
+3.3864247
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.0445025
+</td>
+<td style="text-align:right;">
+2.1306358
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8.4924445
+</td>
+<td style="text-align:right;">
+4.8265342
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.4573278
+</td>
+<td style="text-align:right;">
+6.5867762
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+9.3947791
+</td>
+<td style="text-align:right;">
+4.9932102
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.8662616
+</td>
+<td style="text-align:right;">
+5.2149810
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.8596007
+</td>
+<td style="text-align:right;">
+2.4438274
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.1301887
+</td>
+<td style="text-align:right;">
+5.0384110
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.1269867
+</td>
+<td style="text-align:right;">
+3.0908744
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.9952133
+</td>
+<td style="text-align:right;">
+6.1515592
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+0.4464375
+</td>
+<td style="text-align:right;">
+3.4365769
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.5148245
+</td>
+<td style="text-align:right;">
+0.9069293
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.9031889
+</td>
+<td style="text-align:right;">
+2.4226227
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.3450990
+</td>
+<td style="text-align:right;">
+3.9631006
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.1257061
+</td>
+<td style="text-align:right;">
+0.5672471
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8.0236359
+</td>
+<td style="text-align:right;">
+3.6162738
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.3180503
+</td>
+<td style="text-align:right;">
+1.9596434
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7.2440561
+</td>
+<td style="text-align:right;">
+2.1153724
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.4307173
+</td>
+<td style="text-align:right;">
+1.8013744
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.1486154
+</td>
+<td style="text-align:right;">
+5.5891557
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.7859952
+</td>
+<td style="text-align:right;">
+4.6707825
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.0735143
+</td>
+<td style="text-align:right;">
+1.8679698
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.9358327
+</td>
+<td style="text-align:right;">
+4.5768387
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.4702771
+</td>
+<td style="text-align:right;">
+0.6681413
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.5460694
+</td>
+<td style="text-align:right;">
+1.9383600
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.4911786
+</td>
+<td style="text-align:right;">
+2.9978825
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.6656384
+</td>
+<td style="text-align:right;">
+1.9748753
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.7519191
+</td>
+<td style="text-align:right;">
+5.4857350
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.5877384
+</td>
+<td style="text-align:right;">
+1.6788343
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.5449123
+</td>
+<td style="text-align:right;">
+3.3332484
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+x
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.6564034
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.6017659
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+x
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.0014146
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+x
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.05
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>class(Rttest)</code></pre>
 <pre><code>## [1] &quot;list&quot;</code></pre>
-<pre class="r"><code>#kableExtra::kable(print(Rttest))</code></pre>
 
 
 
