@@ -1,0 +1,47 @@
+---
+title: "Progress3"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Progress3}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+#library(P3THISONE)
+library(kableExtra)
+myconstr = function(x, y, alpha){
+  Rttest2 <- t.test(x, y, mu = 0, var.equal = TRUE, conf.level = 1-alpha)
+  Rttest <- list(data = data.frame(x=x, y=y), Confidence_Interval = Rttest2$conf.int, P.value = Rttest2$p.value, Alpha = alpha)
+  class(Rttest)
+  Rttest
+}
+#Print Function
+print.Rttest <- function(x,...) {
+  data = c(Rttest$data,Rttest$Confidence_Interval,Rttest$P.value,Rttest$Alpha)
+  kable(Rttest$data)
+ 
+#Check 
+#In the messages 
+}
+#data
+set.seed(21)
+x <- rnorm(30,5,2)
+
+set.seed(23)
+y <- rnorm(30,3,2)
+
+alpha <- 0.05
+
+Rttest <- P3THISONE::myconstr(x=x, y=y, alpha=0.05)
+library(P3THISONE)
+kableExtra::kable(print(Rttest))
+class(Rttest)
+```
