@@ -33,9 +33,10 @@ y <- rnorm(30,3,2)
 
 alpha <- 0.05
 
-Rttest <- P3THISONE::myconstr(x, y, alpha)
+Rttest <- P3THISONE::myconstr(x=x, y=y, alpha=0.05)
 library(P3THISONE)
-class(Rttest)
 kableExtra::kable(print(Rttest))
+class(Rttest)
+
 ```
-#this is my change
+

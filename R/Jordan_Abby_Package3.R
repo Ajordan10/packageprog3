@@ -20,7 +20,7 @@ myconstr = function(x, y, alpha){
 #Print Function
 print.Rttest <- function(x,...) {
   data = c(Rttest$data,Rttest$Confidence_Interval,Rttest$P.value,Rttest$Alpha)
-  kable(Rttest$data)
+  #kable(Rttest$data)
 
 }
 #data
@@ -32,6 +32,7 @@ y <- rnorm(30,3,2)
 
 alpha <- 0.05
 
-Rttest = myconstr(x, y, alpha)
+Rttest <-P3THISONE::myconstr(x, y, alpha)
+
 class(Rttest)
 kableExtra::kable(print(Rttest))
