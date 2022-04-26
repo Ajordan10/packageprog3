@@ -52,6 +52,7 @@ alpha <- 0.05
 Rttest <-P3THISONE::myconstr(x=x, y=y, alpha=0.5)
 library(P3THISONE)
 kableExtra::kable(print(Rttest))
+print("https://github.com/Ajordan10/packageprog3.git")
 #class(Rttest)
 
 
